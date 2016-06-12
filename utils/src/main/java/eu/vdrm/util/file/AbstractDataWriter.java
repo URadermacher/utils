@@ -46,6 +46,8 @@ public abstract class AbstractDataWriter implements DataWriter{
     }
   
     public void end()  throws IOException {
-        writer.close();
+        if (writer != null){
+            writer.close();
+        }
     }
 }
