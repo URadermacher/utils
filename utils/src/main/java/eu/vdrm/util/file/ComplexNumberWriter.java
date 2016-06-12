@@ -14,7 +14,7 @@ import org.apache.commons.math3.complex.Complex;
  * 
 gnuplot> set yrange [-2:2]
 gnuplot> set xrange [0:7]   
-gnuplot> plot 'sdk_0.txt'0 using 1:2 title "real"  with lines, 'sdk_0.txt' using 1:3 title "imaginary" with lines
+gnuplot> plot 'sdk_0.txt' using 1:2 title "real"  with lines, 'sdk_0.txt' using 1:3 title "imaginary" with lines
  * 
  * @author ura03640
  *
@@ -22,11 +22,11 @@ gnuplot> plot 'sdk_0.txt'0 using 1:2 title "real"  with lines, 'sdk_0.txt' using
 public class ComplexNumberWriter extends AbstractDataWriter{
     
     
-    
-    int count = 0;
+    /* line counter */
+    private int count = 0;
     /**
      * we expect an array of Complex numbers.
-     * We write only the real part as a long
+     * We write  real part and imaginary part as a long
      */
     public void addData(Object[] data) throws IOException {
         Complex[] myData = (Complex[])data;
